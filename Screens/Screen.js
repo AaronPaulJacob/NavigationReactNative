@@ -103,7 +103,7 @@ export const Search = ({navigation})=>{
     return ( <ScreenContainer>
         <Text> Welcome to Search Page </Text>   
         <View style={styles.button}><Button  title="Search Page" onPress={()=>{}} /></View>
-        
+        <View style={styles.button}><Button  title="Press The button to perform detailed search" onPress={()=>{navigation.push("Search2")}} /></View>
     </ScreenContainer>
     )
 
@@ -112,7 +112,13 @@ export const Search = ({navigation})=>{
 export const Search2 = ({navigation})=>{
     return ( <ScreenContainer>
         <Text> Welcome to Search 2 Page </Text>   
-        <View style={styles.button}><Button  title="Press The button to perform detailed search" onPress={()=>{}} /></View>   
+      
+        <View style={styles.button}><Button  title="Jump to item 2 details" onPress={()=>{
+            navigation.navigate("Home" , {
+                screen: "Details",
+                params: {info:"This is item 2 displayed from the search stack screen", headingLine:"Item 2 from search"}
+            })
+        }} /></View>   
     </ScreenContainer>
     )
 
