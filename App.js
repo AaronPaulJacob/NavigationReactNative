@@ -22,7 +22,14 @@ const SearchComponent=()=>(
 const HomeTabComponent= () =>{
   return(  <HomeTabStack.Navigator>
             <HomeTabStack.Screen name="Home" component={Home} />
-            <HomeTabStack.Screen name="Details" component={Details} />
+            <HomeTabStack.Screen
+             name="Details" 
+             component={Details} 
+             options= {  ( {route} ) => ({
+                                           title: route.params.headingLine
+                                         })
+                       } 
+            />
           </HomeTabStack.Navigator>
   )
 }
